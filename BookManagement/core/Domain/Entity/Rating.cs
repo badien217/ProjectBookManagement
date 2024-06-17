@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class Rating
+    public class Rating : Entitybase,IEntitybase
     {
         public string comment { get; set; }
         public float rating { get; set; }
