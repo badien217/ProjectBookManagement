@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces.AutoMapping
 {
-    public interface AutoMappers
+    public interface IAutoMapper
     {
         //TSource là kiểu nhận được 
         //TDestination là kiểu chuyển về

@@ -1,8 +1,12 @@
-﻿using Domain.Entity;
+﻿using Application.Interfaces.Reponsitories;
+using Application.Interfaces.UnitOfWork;
+using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using persistence.context;
+using persistence.Reponsitory;
+using persistence.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +23,9 @@ namespace persistence
 
             services.AddDbContext<AddDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnect")));
-            //services.AddScoped(typeof(IReadReponsitories<>), typeof(ReadRepositories<>));
-            //services.AddScoped(typeof(IWriteReponsitories<>), typeof(WriteReponsitory<>));
-           // services.AddScoped<IUnitOfWork, UnitOfWork>(); 
+            services.AddScoped(typeof(IReadReponsitory<>), typeof(ReadReponsitory<>));
+            services.AddScoped(typeof(IWriteReponsitory<>), typeof(WriteReponsitory<>));
+            services.AddScoped<IUnitOfWork, UnitOfWorks>(); 
             services.AddIdentityCore<User>(opt =>
             {
                 opt.Password.RequireNonAlphanumeric = false;
