@@ -20,13 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Auths\Commands\RevokeAll\" />
-    <Folder Include="Features\Auths\Commands\Revoke\" />
-    <Folder Include="Features\Auths\Commands\RegisterAdmin\" />
-    <Folder Include="Features\Auths\Commands\Register\" />
-    <Folder Include="Features\Auths\Commands\RefreshToken\" />
-    <Folder Include="Features\Auths\Commands\Profile\" />
-    <Folder Include="Features\Auths\Queries\" />
+    <Folder Include="Features\Auths\Commands\Profile\UpdateInfo\ChangePass\" />
+    <Folder Include="Features\Auths\Commands\Profile\UpdateInfo\UpdateProfileUser\" />
+    <Folder Include="Features\Book\" />
+    <Folder Include="Features\Rating\" />
   </ItemGroup>
 
 </Project>
