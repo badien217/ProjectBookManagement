@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dto\Book\" />
     <Folder Include="Features\Auths\Commands\RevokeAll\" />
     <Folder Include="Features\Auths\Commands\Revoke\" />
     <Folder Include="Features\Auths\Commands\RegisterAdmin\" />

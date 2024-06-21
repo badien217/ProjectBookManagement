@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Auths.Commands.Login
+namespace Application.Base
 {
-    public class LoginCommandValidator
+    public abstract class BaseRule
     {
     }
 }
