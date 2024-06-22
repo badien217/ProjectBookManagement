@@ -20,8 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Auths\Commands\Profile\UpdateInfo\ChangePass\" />
-    <Folder Include="Features\Auths\Commands\Profile\UpdateInfo\UpdateProfileUser\" />
     <Folder Include="Features\Book\" />
     <Folder Include="Features\Rating\" />
   </ItemGroup>
