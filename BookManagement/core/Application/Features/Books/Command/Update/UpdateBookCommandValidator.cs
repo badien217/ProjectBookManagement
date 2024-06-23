@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Dto.Auth.Validate
+namespace Application.Features.Books.Command.Update
 {
-    public class LoginCommandValidator
+    internal class UpdateBookCommandValidator
     {
     }
 }

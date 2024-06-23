@@ -1,6 +1,4 @@
 ﻿using Application.Base;
-using Application.Dto.Auth.Request;
-using Application.Dto.Auth.Response;
 using Application.Features.Auths.Rules;
 using Application.Interfaces.AutoMapping;
 using Application.Interfaces.Token;

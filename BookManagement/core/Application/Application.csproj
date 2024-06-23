@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -20,7 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Book\" />
+    <Folder Include="Features\Book\Command\Delete\" />
+    <Folder Include="Features\Book\Command\Update\" />
+    <Folder Include="Features\Book\Exception\" />
+    <Folder Include="Features\Book\Query\GetAll\" />
+    <Folder Include="Features\Book\Query\GetOne\" />
+    <Folder Include="Features\Book\Rule\" />
     <Folder Include="Features\Rating\" />
   </ItemGroup>
 

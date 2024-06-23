@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Dto.Auth.Response
+namespace Application.Features.Auths.Commands.Login
 {
     public class LoginCommandReponse
     {
