@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Books.Command.Update
 {
-    internal class UpdateBookCommandValidator
+    public class UpdateBookCommandValidator
     {
     }
 }

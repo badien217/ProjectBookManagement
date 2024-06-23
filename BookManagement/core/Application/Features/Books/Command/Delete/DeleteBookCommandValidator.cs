@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Books.Command.Delete
 {
-    internal class DeleteBookCommandValidator
+    public class DeleteBookCommandValidator
     {
     }
 }

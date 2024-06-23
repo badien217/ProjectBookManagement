@@ -20,12 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Book\Command\Delete\" />
-    <Folder Include="Features\Book\Command\Update\" />
-    <Folder Include="Features\Book\Exception\" />
-    <Folder Include="Features\Book\Query\GetAll\" />
-    <Folder Include="Features\Book\Query\GetOne\" />
-    <Folder Include="Features\Book\Rule\" />
+    <Folder Include="Features\Books\Exception\" />
+    <Folder Include="Features\Books\Query\GetAll\" />
+    <Folder Include="Features\Books\Query\GetOne\" />
+    <Folder Include="Features\Books\Rule\" />
     <Folder Include="Features\Rating\" />
   </ItemGroup>
 

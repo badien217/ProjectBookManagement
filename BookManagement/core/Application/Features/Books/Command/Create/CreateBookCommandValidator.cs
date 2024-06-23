@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Book.Command.Create
+namespace Application.Features.Books.Command.Create
 {
     public class CreateBookCommandValidator
     {
