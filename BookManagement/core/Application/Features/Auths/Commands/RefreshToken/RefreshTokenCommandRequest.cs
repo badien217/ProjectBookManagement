@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Auths.Commands.RefreshToken
 {
-    public class RefreshTokenCommandRequest : IRequest
+    public class RefreshTokenCommandRequest : IRequest<RefreshTokenCommandReponse>
     {
+        public string AccessToken { get; set; }
+        public string RefreshToken { get; set; }
     }
 }

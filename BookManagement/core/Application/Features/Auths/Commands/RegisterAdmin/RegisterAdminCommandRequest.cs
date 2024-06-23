@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Auths.Commands.RegisterAdmin
 {
-    public class RegisterAdminCommandRequest
+    public class RegisterAdminCommandRequest : IRequest<Unit>
     {
+        public string fullname { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
+        public string ConfirmPassword { get; set; }
     }
 }

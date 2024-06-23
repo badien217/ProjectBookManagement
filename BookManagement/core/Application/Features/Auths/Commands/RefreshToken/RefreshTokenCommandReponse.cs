@@ -8,5 +8,7 @@ namespace Application.Features.Auths.Commands.RefreshToken
 {
     public class RefreshTokenCommandReponse
     {
+        public string AccessToken { get; set; }
+        public string RefreshToken { get; set; }
     }
 }
