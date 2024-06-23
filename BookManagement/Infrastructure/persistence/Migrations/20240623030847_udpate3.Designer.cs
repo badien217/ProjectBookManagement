@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using persistence.context;
 
@@ -11,9 +12,11 @@ using persistence.context;
 namespace persistence.Migrations
 {
     [DbContext(typeof(AddDbContext))]
-    partial class AddDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240623030847_udpate3")]
+    partial class udpate3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -164,7 +167,7 @@ namespace persistence.Migrations
 
                     b.HasIndex("collectionId");
 
-                    b.ToTable("CollectionDetails");
+                    b.ToTable("collectionDetails");
                 });
 
             modelBuilder.Entity("Domain.Entity.Faq", b =>

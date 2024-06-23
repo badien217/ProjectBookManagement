@@ -19,6 +19,7 @@ namespace persistence.context
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Collection> Collections { get; set; }
+        public DbSet<CollectionDetail> CollectionDetails { get; set; }
         public DbSet<Faq> Faqs { get; set; }
         public DbSet<History> Histories { get; set; }
         public DbSet<Order> Orders { get; set; }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using persistence.context;
 
@@ -11,9 +12,11 @@ using persistence.context;
 namespace persistence.Migrations
 {
     [DbContext(typeof(AddDbContext))]
-    partial class AddDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240623030334_udpate2")]
+    partial class udpate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,9 +70,6 @@ namespace persistence.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CollectionDetailId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -100,8 +100,6 @@ namespace persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
-
-                    b.HasIndex("CollectionDetailId");
 
                     b.HasIndex("OrderDetailId");
 
@@ -138,33 +136,6 @@ namespace persistence.Migrations
                     b.HasIndex("saleId");
 
                     b.ToTable("Collections");
-                });
-
-            modelBuilder.Entity("Domain.Entity.CollectionDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("bookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("collectionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("collectionId");
-
-                    b.ToTable("CollectionDetails");
                 });
 
             modelBuilder.Entity("Domain.Entity.Faq", b =>
@@ -636,10 +607,6 @@ namespace persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entity.CollectionDetail", null)
-                        .WithMany("books")
-                        .HasForeignKey("CollectionDetailId");
-
                     b.HasOne("Domain.Entity.OrderDetail", null)
                         .WithMany("Books")
                         .HasForeignKey("OrderDetailId");
@@ -656,17 +623,6 @@ namespace persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("sale");
-                });
-
-            modelBuilder.Entity("Domain.Entity.CollectionDetail", b =>
-                {
-                    b.HasOne("Domain.Entity.Collection", "collection")
-                        .WithMany()
-                        .HasForeignKey("collectionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("collection");
                 });
 
             modelBuilder.Entity("Domain.Entity.History", b =>
@@ -770,11 +726,6 @@ namespace persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Entity.CollectionDetail", b =>
-                {
-                    b.Navigation("books");
                 });
 
             modelBuilder.Entity("Domain.Entity.OrderDetail", b =>
