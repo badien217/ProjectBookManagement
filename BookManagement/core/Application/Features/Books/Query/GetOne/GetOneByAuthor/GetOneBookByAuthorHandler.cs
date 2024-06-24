@@ -4,6 +4,7 @@ using Application.Interfaces.UnitOfWork;
 using Domain.Entity;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,15 @@ namespace Application.Features.Books.Query.GetOne.GetOneByAuthor
         public async Task<IList<GetOneBookByAuthorReponse>> Handle(GetOneBookByAuthorRequest request, CancellationToken cancellationToken)
         {
             var books = await unitOfWork.GetReadReponsitory<Book>().Find(x => x.AuthorId == request.AuthorId);
-            var map = mapper.Map<GetOneBookByAuthorReponse, Book>(books);
+            return await books.Select(Books => new GetOneBookByAuthorReponse
+            {
+                Title = Books.Title,
+                filePDF = Books.filePDF,
+                ImageUrl = Books.ImageUrl,
+                Price = Books.Price,
+                Quantity = Books.Quantity,
+
+            }).ToListAsync(cancellationToken) ;
         }
     }
 }

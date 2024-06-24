@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Books\Exception\" />
-    <Folder Include="Features\Books\Query\GetOne\GetOntById\" />
     <Folder Include="Features\Books\Rule\" />
     <Folder Include="Features\Rating\" />
   </ItemGroup>
