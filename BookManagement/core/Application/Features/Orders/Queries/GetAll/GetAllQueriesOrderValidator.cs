@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Dtos
+namespace Application.Features.Orders.Queries.GetAll
 {
-    public class AuthorDtos
+    public class GetAllQueriesOrderValidator
     {
-        public string Name { get; set; }
     }
 }

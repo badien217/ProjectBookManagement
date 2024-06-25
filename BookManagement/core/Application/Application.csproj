@@ -27,11 +27,11 @@
     <Folder Include="Features\Collection\" />
     <Folder Include="Features\History\" />
     <Folder Include="Features\Faq\" />
-    <Folder Include="Features\Orders\Command\Delete\" />
-    <Folder Include="Features\Orders\Command\Update\" />
     <Folder Include="Features\Orders\Exception\" />
+    <Folder Include="Features\Orders\Queries\GetOne\" />
+    <Folder Include="Features\Orders\Queries\GetOrderByDate\" />
+    <Folder Include="Features\Orders\Queries\GetTotal\" />
     <Folder Include="Features\Orders\Rule\" />
-    <Folder Include="Features\Orders\Queries\" />
     <Folder Include="Features\Sale\" />
     <Folder Include="Features\Rating\Command\Create\" />
     <Folder Include="Features\Rating\Command\Delete\" />
