@@ -22,14 +22,17 @@
   <ItemGroup>
     <Folder Include="Features\Authors\Exception\" />
     <Folder Include="Features\Authors\Rule\" />
-    <Folder Include="Features\Authors\Queries\" />
     <Folder Include="Features\Books\Exception\" />
     <Folder Include="Features\Books\Rule\" />
     <Folder Include="Features\Collection\" />
     <Folder Include="Features\History\" />
     <Folder Include="Features\Faq\" />
+    <Folder Include="Features\Orders\Command\Delete\" />
+    <Folder Include="Features\Orders\Command\Update\" />
+    <Folder Include="Features\Orders\Exception\" />
+    <Folder Include="Features\Orders\Rule\" />
+    <Folder Include="Features\Orders\Queries\" />
     <Folder Include="Features\Sale\" />
-    <Folder Include="Features\Order\" />
     <Folder Include="Features\Rating\Command\Create\" />
     <Folder Include="Features\Rating\Command\Delete\" />
     <Folder Include="Features\Rating\Command\Update\" />
