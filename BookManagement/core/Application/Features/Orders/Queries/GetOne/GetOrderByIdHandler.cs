@@ -24,12 +24,13 @@ namespace Application.Features.Orders.Queries.GetOne
         public async Task<GetOrderByIdReponse> Handle(GetOrderByIdRequest request, CancellationToken cancellationToken)
         {
             var orderDetails = await unitOfWork.GetReadReponsitory<OrderDetail>()
-    .       GetAsync(include: x => x
-            .Include(b => b.Books)
-            );
+    .GetAsync(include: x => x
+            .Include(b => b.Books )
+            ); ;
 
             var map1 = mapper.Map<BookDtos, Book>(new Book());
-            var map = mapper.Map<AuthorDtos, Author>(new Author());
+            //var map = mapper.Map<AuthorDtos, Author>(new Author());
+            var map2 = mapper.Map<OrderDto, Order>(new Order());
             var order = mapper.Map<GetOrderByIdReponse, OrderDetail>(orderDetails);
             return order;
         }

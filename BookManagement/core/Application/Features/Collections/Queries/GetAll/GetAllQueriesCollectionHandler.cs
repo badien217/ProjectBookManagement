@@ -22,7 +22,7 @@ namespace Application.Features.Collections.Queries.GetAll
 
         public async Task<IList<GetAllQueriesCollectionReponse>> Handle(GetAllQueriesCollectionRequest request, CancellationToken cancellationToken)
         {
-            var collection = await unitOfWork.GetReadReponsitory<Collection>().GetAllAsync(b => !b.IsDeleted,include: x => x.Include(y => y.sale)  );\
+            IList<Collection> collection = await unitOfWork.GetReadReponsitory<Collection>().GetAllAsync(b => !b.IsDeleted,include: x => x.Include(y => y.sale)  );
             var map = mapper.Map<AuthorDtos, Author>(new Author());
             var collectionmap = mapper.Map<GetAllQueriesCollectionReponse, Collection>(collection);
             return collectionmap;

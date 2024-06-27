@@ -12,6 +12,6 @@ namespace Application.Dtos
         public string ImageUrl { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-        public AuthorDtos Author { get; set; }  
+        //public AuthorDtos Author { get; set; }  
     }
 }

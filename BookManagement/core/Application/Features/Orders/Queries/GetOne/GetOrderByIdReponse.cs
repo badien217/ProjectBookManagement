@@ -9,7 +9,7 @@ namespace Application.Features.Orders.Queries.GetOne
 {
     public class GetOrderByIdReponse
     {
-        public OrderDto Order { get; set; }
+        //public OrderDto Order { get; set; }
         public BookDtos Book { get; set; }
     }
 }

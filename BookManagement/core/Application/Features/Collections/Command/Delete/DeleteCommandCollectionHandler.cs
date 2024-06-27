@@ -14,6 +14,7 @@ namespace Application.Features.Collections.Command.Delete
 {
     public class DeleteCommandCollectionHandler : BaseHandler, IRequestHandler<DeleteCommandCollectionRequest, Unit>
     {
+
         public DeleteCommandCollectionHandler(IAutoMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
         }
