@@ -25,10 +25,14 @@ namespace Application.Features.Orders.Queries.GetAll
         {
             var orderDetails = await unitOfWork.GetReadReponsitory<OrderDetail>()
     .       GetAllAsync(include: x => x
-            .Include(b => b.Books).ThenInclude(c => c.Select(y => y.author)) 
+            .Include(b => b.Books) 
             );
-            var map = mapper.Map<AuthorDtos, Author>(new Author());
+            
             var map1 = mapper.Map<BookDtos,Book>(new Book());
+            var map = mapper.Map<AuthorDtos, Author>(new Author());
+            var order = mapper.Map<GetAllQueriesOrderReponse, OrderDetail>(orderDetails);
+            return order;
+           
 
         }
     }
