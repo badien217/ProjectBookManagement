@@ -38,7 +38,7 @@ namespace infrastructure
                     ClockSkew = TimeSpan.Zero//Đặt khoảng thời gian cho phép sai số giữa thời gian máy chủ và thời gian của token là 0
                 };
             });
-            services.AddStackExchangeRedisCache(opt =>
+            services.AddStackExchangeRedisCache(opt =>// add cấu hình redis
             {
                 opt.Configuration = configuration["RedisCacheSettings:ConnectionString"];
                 opt.InstanceName = configuration["RedisCacheSettings:InstanceName"];

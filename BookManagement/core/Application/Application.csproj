@@ -26,8 +26,11 @@
     <Folder Include="Features\Books\Exception\" />
     <Folder Include="Features\Books\Rule\" />
     <Folder Include="Features\Collection\" />
-    <Folder Include="Features\History\" />
     <Folder Include="Features\Faq\" />
+    <Folder Include="Features\History\Command\" />
+    <Folder Include="Features\History\Exception\" />
+    <Folder Include="Features\History\Faq\" />
+    <Folder Include="Features\History\Queries\" />
     <Folder Include="Features\Orders\Exception\" />
     <Folder Include="Features\Orders\Queries\GetOne\" />
     <Folder Include="Features\Orders\Queries\GetOrderByDate\" />
