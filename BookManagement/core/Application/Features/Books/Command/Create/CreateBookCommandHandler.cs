@@ -27,7 +27,7 @@ namespace Application.Features.Books.Command.Create
         {
             IList<Book> books = await _unitOfWork.GetReadReponsitory<Book>().GetAllAsync();
             //await BookRules.BookTitleMostNotBeSame(books, request.Title);
-            var bookNew = new Book { Title = request.Title, ImageUrl = request.ImageUrl,Price = request.Price,AuthorId = request.AuthorId,filePDF = request.filePDF,Quantity = request.Quantity }
+            var bookNew = new Book { Title = request.Title, ImageUrl = request.ImageUrl, Price = request.Price, AuthorId = request.AuthorId, filePDF = request.filePDF, Quantity = request.Quantity };
             await _unitOfWork.GetWriteReponsitory<Book>().AddAsync(bookNew);
             if(await _unitOfWork.SaveAsync() > 0)
             {

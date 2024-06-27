@@ -25,18 +25,20 @@
     <Folder Include="Features\Authors\Rule\" />
     <Folder Include="Features\Books\Exception\" />
     <Folder Include="Features\Books\Rule\" />
-    <Folder Include="Features\Collection\" />
-    <Folder Include="Features\Faq\" />
+    <Folder Include="Features\Collections\Exception\" />
+    <Folder Include="Features\Collections\Rules\" />
+    <Folder Include="Features\Collections\Queries\" />
+    <Folder Include="Features\Faq\Command\" />
+    <Folder Include="Features\Faq\Exception\" />
+    <Folder Include="Features\Faq\Rules\" />
+    <Folder Include="Features\Faq\Queries\" />
     <Folder Include="Features\History\Command\" />
     <Folder Include="Features\History\Exception\" />
     <Folder Include="Features\History\Faq\" />
     <Folder Include="Features\History\Queries\" />
     <Folder Include="Features\Orders\Exception\" />
-    <Folder Include="Features\Orders\Queries\GetOne\" />
-    <Folder Include="Features\Orders\Queries\GetOrderByDate\" />
     <Folder Include="Features\Orders\Queries\GetTotal\" />
     <Folder Include="Features\Orders\Rule\" />
-    <Folder Include="Features\Sale\" />
     <Folder Include="Features\Rating\Command\Create\" />
     <Folder Include="Features\Rating\Command\Delete\" />
     <Folder Include="Features\Rating\Command\Update\" />
@@ -44,6 +46,10 @@
     <Folder Include="Features\Rating\Queries\GetRating\GetRatingById\" />
     <Folder Include="Features\Rating\Queries\GetRating\GetRatingByAuthor\" />
     <Folder Include="Features\Rating\Rules\" />
+    <Folder Include="Features\Sale\Command\" />
+    <Folder Include="Features\Sale\Exception\" />
+    <Folder Include="Features\Sale\Rules\" />
+    <Folder Include="Features\Sale\Queries\" />
   </ItemGroup>
 
 </Project>
