@@ -29,27 +29,18 @@
     <Folder Include="Features\Collections\Rules\" />
     <Folder Include="Features\Collections\Queries\" />
     <Folder Include="Features\Faqs\Exception\" />
-    <Folder Include="Features\Faqs\Queries\GetAll\" />
     <Folder Include="Features\Faqs\Queries\GetOne\" />
     <Folder Include="Features\Faqs\Rules\" />
-    <Folder Include="Features\Historys\Command\" />
-    <Folder Include="Features\Historys\Exception\" />
-    <Folder Include="Features\Historys\Faq\" />
-    <Folder Include="Features\Historys\Queries\" />
     <Folder Include="Features\Orders\Exception\" />
     <Folder Include="Features\Orders\Queries\GetTotal\" />
     <Folder Include="Features\Orders\Rule\" />
-    <Folder Include="Features\Ratings\Command\Create\" />
-    <Folder Include="Features\Ratings\Command\Delete\" />
     <Folder Include="Features\Ratings\Command\Update\" />
     <Folder Include="Features\Ratings\Exception\" />
     <Folder Include="Features\Ratings\Queries\GetRating\GetRatingById\" />
     <Folder Include="Features\Ratings\Queries\GetRating\GetRatingByAuthor\" />
     <Folder Include="Features\Ratings\Rules\" />
-    <Folder Include="Features\Sales\Command\" />
     <Folder Include="Features\Sales\Exception\" />
     <Folder Include="Features\Sales\Rules\" />
-    <Folder Include="Features\Sales\Queries\" />
   </ItemGroup>
 
 </Project>
