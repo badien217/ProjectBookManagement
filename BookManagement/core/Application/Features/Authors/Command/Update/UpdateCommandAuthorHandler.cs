@@ -21,7 +21,7 @@ namespace Application.Features.Authors.Command.Update
         public async Task<Unit> Handle(UpdateCommandAuthorRequest request, CancellationToken cancellationToken)
         {
             var author = await unitOfWork.GetReadReponsitory<Author>().GetAsync(x => x.Id == request.id && !x.IsDeleted);
-            var map = mapper.Map<Author>(author);
+            var map = mapper.Map<Author, UpdateCommandAuthorRequest>(request);
             await unitOfWork.GetWriteReponsitory<Author>().UpdateAsync(map);
             return Unit.Value;
         }
