@@ -1,9 +1,12 @@
-﻿
-using Application.Features.Orders.Command.Create;
-using Application.Features.Orders.Command.Delete;
-using Application.Features.Orders.Command.Update;
-using Application.Features.Orders.Queries.GetAll;
-using Application.Features.Orders.Queries.GetOne;
+﻿using Application.Features.Authors.Command.Create;
+using Application.Features.Authors.Command.Delete;
+using Application.Features.Authors.Command.Update;
+using Application.Features.Authors.Queries.GetAll;
+using Application.Features.Authors.Queries.GetOne;
+using Application.Features.Ratings.Command.Create;
+using Application.Features.Ratings.Command.Delete;
+using Application.Features.Ratings.Command.Update;
+using Application.Features.Ratings.Queries.GetRating.GetRatingByAuthor;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,28 +15,20 @@ namespace WebApi.Controller
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class OrderController : ControllerBase
+    public class RatingController : ControllerBase
     {
         public readonly IMediator mediator;
         private readonly IAuthorizationService authorizationService;
-        public OrderController(IMediator mediator, IAuthorizationService authorizationService)
+        public RatingController(IMediator mediator, IAuthorizationService authorizationService)
         {
             this.mediator = mediator;
             this.authorizationService = authorizationService;
         }
-        [HttpGet]
-
-        public async Task<IActionResult> GetAllOrder()
-        {
-            var response = await mediator.Send(new GetAllQueriesOrderRequest());
-
-            return Ok(response);
-
-        }
+   
 
         [HttpPost]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> CreateOrder([FromForm] CreateCommadOrderRequest requeste)
+        public async Task<IActionResult> CreateRating([FromForm] CreateCommandRatingRequest requeste)
         {
             await mediator.Send(requeste);
 
@@ -41,21 +36,21 @@ namespace WebApi.Controller
         }
         [HttpPut("id")]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> UpdateOrder([FromForm] UpdateCommandOrderRequest requeste)
+        public async Task<IActionResult> UpdateRating([FromForm] UpdateCommandRatingRequest requeste)
         {
             await mediator.Send(requeste);
             return Ok();
         }
         [HttpPost]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> DeleteOrder(DeleteCommandOrderRequest requeste)
+        public async Task<IActionResult> DeleteRating(DeleteCommandRatingRequest requeste)
         {
             await mediator.Send(requeste);
             return Ok();
         }
         [HttpPost]
 
-        public async Task<IActionResult> GetOrderById(GetOrderByIdRequest request)
+        public async Task<IActionResult> GetRatingById(GetRatingByAuthorRequest request)
         {
             var reponser = await mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK, reponser);

@@ -29,15 +29,11 @@
     <Folder Include="Features\Collections\Rules\" />
     <Folder Include="Features\Collections\Queries\" />
     <Folder Include="Features\Faqs\Exception\" />
-    <Folder Include="Features\Faqs\Queries\GetOne\" />
     <Folder Include="Features\Faqs\Rules\" />
     <Folder Include="Features\Orders\Exception\" />
     <Folder Include="Features\Orders\Queries\GetTotal\" />
     <Folder Include="Features\Orders\Rule\" />
-    <Folder Include="Features\Ratings\Command\Update\" />
     <Folder Include="Features\Ratings\Exception\" />
-    <Folder Include="Features\Ratings\Queries\GetRating\GetRatingById\" />
-    <Folder Include="Features\Ratings\Queries\GetRating\GetRatingByAuthor\" />
     <Folder Include="Features\Ratings\Rules\" />
     <Folder Include="Features\Sales\Exception\" />
     <Folder Include="Features\Sales\Rules\" />
