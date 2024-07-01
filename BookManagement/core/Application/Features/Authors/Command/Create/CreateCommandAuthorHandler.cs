@@ -22,6 +22,7 @@ namespace Application.Features.Authors.Command.Create
             var AuthorNew = new Author { name = request.name, age = request.age, rating = request.rating, avatar = request.avatar };
 
             await unitOfWork.GetWriteReponsitory<Author>().AddAsync(AuthorNew);
+            await unitOfWork.SaveAsync();
             return Unit.Value;
         }
     }

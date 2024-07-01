@@ -44,7 +44,7 @@ namespace WebApi.Controller
 
             return Ok();
         }
-        [HttpPut("id")]
+        [HttpPost]
         // [Authorize(Roles = "admin")]
         public async Task<IActionResult> UpdateFaq([FromForm] UpdateCommandFaqRequest requeste)
         {

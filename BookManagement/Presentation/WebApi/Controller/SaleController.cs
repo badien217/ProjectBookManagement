@@ -37,13 +37,13 @@ namespace WebApi.Controller
 
         [HttpPost]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> CreateSale([FromForm] CreateCommandSaleRequest requeste)
+        public async Task<IActionResult> CreateSale( CreateCommandSaleRequest requeste)
         {
             await mediator.Send(requeste);
 
             return Ok();
         }
-        [HttpPut("id")]
+        [HttpPost]
         // [Authorize(Roles = "admin")]
         public async Task<IActionResult> UpdateSale([FromForm] UpdateCommandSaleRequest requeste)
         {

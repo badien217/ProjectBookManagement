@@ -38,15 +38,15 @@ namespace WebApi.Controller
 
         [HttpPost]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> CreateAuthor([FromForm] CreateCommandAuthorRequest requeste)
+        public async Task<IActionResult> CreateAuthor(CreateCommandAuthorRequest requeste)
         {
             await mediator.Send(requeste);
 
             return Ok();
         }
-        [HttpPut("id")]
+        [HttpPost]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> UpdateBook([FromForm] UpdateCommandAuthorRequest requeste)
+        public async Task<IActionResult> UpdateBook( UpdateCommandAuthorRequest requeste)
         {
             await mediator.Send(requeste);
             return Ok();
@@ -60,7 +60,7 @@ namespace WebApi.Controller
         }
         [HttpPost]
 
-        public async Task<IActionResult> GetBookById(GetByIdQueriesAuthorRequest request)
+        public async Task<IActionResult> GetAuthorbyId(GetByIdQueriesAuthorRequest request)
         {
             var reponser = await mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK, reponser);

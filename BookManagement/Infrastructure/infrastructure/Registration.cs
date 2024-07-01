@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
+using Application.Interfaces.RedisCache;
+using infrastructure.Redis;
 
 namespace infrastructure
 {
@@ -19,6 +21,8 @@ namespace infrastructure
             services.AddTransient<ITokenServices, TokenSevices>();//đăng ký sử dụng trên .net
             //cấu hình xác thực JWT (JSON Web Token) bằng cách sử dụng middleware Authentication và JWT Bearer Authentication
             //cho phép ứng dụng xác thực và ủy quyền người dùng dựa trên các token JWT
+            services.Configure<RedisCachingSetting>(configuration.GetSection("RedisCacheSettings"));
+            services.AddTransient<IRedisCache, RedisCachingServices>();
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;// Đặt scheme mặc định để xác thực

@@ -34,15 +34,15 @@ namespace WebApi.Controller
 
         [HttpPost]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> CreateBook([FromForm] CreateBookCommandRequest requeste)
+        public async Task<IActionResult> CreateBook( CreateBookCommandRequest requeste)
         {
             await mediator.Send(requeste);
 
             return Ok();
         }
-        [HttpPut("id")]
+        [HttpPost]
         // [Authorize(Roles = "admin")]
-        public async Task<IActionResult> UpdateBook([FromForm] UpdateBookCommandRequest requeste)
+        public async Task<IActionResult> UpdateBook( UpdateBookCommandRequest requeste)
         {
             await mediator.Send(requeste);
             return Ok();

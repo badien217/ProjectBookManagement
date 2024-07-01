@@ -1,9 +1,11 @@
 ﻿using Application.Base;
 using Application.Interfaces.AutoMapping;
+using Application.Interfaces.RedisCache;
 using Application.Interfaces.UnitOfWork;
 using Domain.Entity;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Distributed;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +16,23 @@ namespace Application.Features.Authors.Queries.GetOne
 {
     public class GetByIdQueriesAuthorHandler : BaseHandler, IRequestHandler<GetByIdQueriesAuthorRequest, GetByIdQueriesAuthorReponse>
     {
-        public GetByIdQueriesAuthorHandler(IAutoMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        private readonly IRedisCache _cache;
+        private readonly IDistributedCache _client;
+        public GetByIdQueriesAuthorHandler(IRedisCache _cache, IAutoMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IDistributedCache _client) : base(mapper, unitOfWork, httpContextAccessor)
         {
+            this._cache = _cache;
+            this._client = _client;
         }
 
         public async Task<GetByIdQueriesAuthorReponse> Handle(GetByIdQueriesAuthorRequest request, CancellationToken cancellationToken)
         {
-            var author = await unitOfWork.GetReadReponsitory<Author>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
-            var map = mapper.Map< GetByIdQueriesAuthorReponse,Author >(author);
+            var author = await _cache.GetAsync<GetByIdQueriesAuthorReponse>(request.Id);
+            string key = "GetAllAuthor";
+            var map1 = mapper.Map<GetByIdQueriesAuthorReponse>(this._cache.SetAsync(key, author));
+            //var author = await unitOfWork.GetReadReponsitory<Author>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            //var map = mapper.Map< GetByIdQueriesAuthorReponse,Author >(author);
            
-            return map;
+            return map1;
 
         }
     }
