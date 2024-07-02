@@ -18,22 +18,20 @@ namespace Application.Features.Authors.Queries.GetOne
     {
         private readonly IRedisCache _cache;
         private readonly IDistributedCache _client;
-        public GetByIdQueriesAuthorHandler(IRedisCache _cache, IAutoMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IDistributedCache _client) : base(mapper, unitOfWork, httpContextAccessor)
+        public GetByIdQueriesAuthorHandler(IRedisCache cache, IAutoMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IDistributedCache _client) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this._cache = _cache;
+            this._cache = cache;
             this._client = _client;
         }
 
         public async Task<GetByIdQueriesAuthorReponse> Handle(GetByIdQueriesAuthorRequest request, CancellationToken cancellationToken)
         {
-            var author = await _cache.GetAsync<GetByIdQueriesAuthorReponse>(request.Id);
+            var author = await _cache.GetAsync<GetByIdQueriesAuthorReponse>(request.id);
             string key = "GetAllAuthor";
-            var map1 = mapper.Map<GetByIdQueriesAuthorReponse>(this._cache.SetAsync(key, author));
-            //var author = await unitOfWork.GetReadReponsitory<Author>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
-            //var map = mapper.Map< GetByIdQueriesAuthorReponse,Author >(author);
-           
-            return map1;
-
+            var map = mapper.Map<GetByIdQueriesAuthorReponse>(this._cache.SetAsync(key, author));
+            
+            return map;
+                
         }
     }
 }

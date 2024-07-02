@@ -9,8 +9,7 @@ namespace Domain.Entity
 {
     public class Author : Entitybase,IEntitybase
     {
-        public string name { get; set; }
-     
+        public string name { get; set; }     
         public string age { get; set; }
         public float rating { get; set; }
         public string avatar { get; set; }
