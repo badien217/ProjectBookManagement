@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using Application.Interfaces.RedisCache;
 using infrastructure.Redis;
+using Application.Interfaces.SendMessages;
+using infrastructure.RabbitMq;
 
 namespace infrastructure
 {
@@ -23,6 +25,7 @@ namespace infrastructure
             //cho phép ứng dụng xác thực và ủy quyền người dùng dựa trên các token JWT
             services.Configure<RedisCachingSetting>(configuration.GetSection("RedisCacheSettings"));
             services.AddTransient<IRedisCache, RedisCachingServices>();
+            services.AddScoped<ISendMessageRabbitMQ, SendMessage>();
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;// Đặt scheme mặc định để xác thực
