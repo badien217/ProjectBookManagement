@@ -11,5 +11,6 @@ namespace Domain.Entity
     {
         public string name { get;set; }
         public string image { get; set; }
+        public ICollection<Product> product { get; set; }
     }
 }
